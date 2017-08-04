@@ -11,7 +11,35 @@
 		1F352C2E1F344FA2009990D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F352C2D1F344FA2009990D0 /* ViewController.swift */; };
 		1F352C301F344FA2009990D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F352C2F1F344FA2009990D0 /* Assets.xcassets */; };
 		1F352C331F344FA2009990D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F352C311F344FA2009990D0 /* Main.storyboard */; };
+		1F352C411F345279009990D0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F352C401F345279009990D0 /* Cocoa.framework */; };
+		1F352C461F345279009990D0 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F352C451F345279009990D0 /* SourceEditorExtension.swift */; };
+		1F352C481F345279009990D0 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F352C471F345279009990D0 /* SourceEditorCommand.swift */; };
+		1F352C4C1F345279009990D0 /* CodeFormat.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F352C3E1F345279009990D0 /* CodeFormat.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F352C4A1F345279009990D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F352C201F344FA2009990D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F352C3D1F345279009990D0;
+			remoteInfo = CodeFormat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1F352C501F345279009990D0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1F352C4C1F345279009990D0 /* CodeFormat.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1F352C281F344FA2009990D0 /* CodeFormatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeFormatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +48,12 @@
 		1F352C2F1F344FA2009990D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F352C321F344FA2009990D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F352C341F344FA2009990D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F352C3E1F345279009990D0 /* CodeFormat.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CodeFormat.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F352C401F345279009990D0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1F352C441F345279009990D0 /* CodeFormat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeFormat.entitlements; sourceTree = "<group>"; };
+		1F352C451F345279009990D0 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		1F352C471F345279009990D0 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		1F352C491F345279009990D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +64,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F352C3B1F345279009990D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F352C411F345279009990D0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				1F352C2A1F344FA2009990D0 /* CodeFormatter */,
+				1F352C421F345279009990D0 /* CodeFormat */,
+				1F352C3F1F345279009990D0 /* Frameworks */,
 				1F352C291F344FA2009990D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				1F352C281F344FA2009990D0 /* CodeFormatter.app */,
+				1F352C3E1F345279009990D0 /* CodeFormat.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +106,33 @@
 			path = CodeFormatter;
 			sourceTree = "<group>";
 		};
+		1F352C3F1F345279009990D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F352C401F345279009990D0 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F352C421F345279009990D0 /* CodeFormat */ = {
+			isa = PBXGroup;
+			children = (
+				1F352C451F345279009990D0 /* SourceEditorExtension.swift */,
+				1F352C471F345279009990D0 /* SourceEditorCommand.swift */,
+				1F352C491F345279009990D0 /* Info.plist */,
+				1F352C431F345279009990D0 /* Supporting Files */,
+			);
+			path = CodeFormat;
+			sourceTree = "<group>";
+		};
+		1F352C431F345279009990D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F352C441F345279009990D0 /* CodeFormat.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,15 +143,34 @@
 				1F352C241F344FA2009990D0 /* Sources */,
 				1F352C251F344FA2009990D0 /* Frameworks */,
 				1F352C261F344FA2009990D0 /* Resources */,
+				1F352C501F345279009990D0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1F352C4B1F345279009990D0 /* PBXTargetDependency */,
 			);
 			name = CodeFormatter;
 			productName = CodeFormatter;
 			productReference = 1F352C281F344FA2009990D0 /* CodeFormatter.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1F352C3D1F345279009990D0 /* CodeFormat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F352C4D1F345279009990D0 /* Build configuration list for PBXNativeTarget "CodeFormat" */;
+			buildPhases = (
+				1F352C3A1F345279009990D0 /* Sources */,
+				1F352C3B1F345279009990D0 /* Frameworks */,
+				1F352C3C1F345279009990D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeFormat;
+			productName = CodeFormat;
+			productReference = 1F352C3E1F345279009990D0 /* CodeFormat.appex */;
+			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -92,6 +183,10 @@
 				ORGANIZATIONNAME = VIctorChee;
 				TargetAttributes = {
 					1F352C271F344FA2009990D0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					1F352C3D1F345279009990D0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
@@ -111,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				1F352C271F344FA2009990D0 /* CodeFormatter */,
+				1F352C3D1F345279009990D0 /* CodeFormat */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +218,13 @@
 			files = (
 				1F352C301F344FA2009990D0 /* Assets.xcassets in Resources */,
 				1F352C331F344FA2009990D0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F352C3C1F345279009990D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +240,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1F352C3A1F345279009990D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F352C461F345279009990D0 /* SourceEditorExtension.swift in Sources */,
+				1F352C481F345279009990D0 /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F352C4B1F345279009990D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F352C3D1F345279009990D0 /* CodeFormat */;
+			targetProxy = 1F352C4A1F345279009990D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1F352C311F344FA2009990D0 /* Main.storyboard */ = {
@@ -246,6 +366,7 @@
 		1F352C381F344FA2009990D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CodeFormatter/Info.plist;
@@ -259,12 +380,43 @@
 		1F352C391F344FA2009990D0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CodeFormatter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.victorchee.CodeFormatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1F352C4E1F345279009990D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CodeFormat/CodeFormat.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CodeFormat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.victorchee.CodeFormatter.CodeFormat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1F352C4F1F345279009990D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CodeFormat/CodeFormat.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CodeFormat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.victorchee.CodeFormatter.CodeFormat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -286,6 +438,14 @@
 			buildConfigurations = (
 				1F352C381F344FA2009990D0 /* Debug */,
 				1F352C391F344FA2009990D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1F352C4D1F345279009990D0 /* Build configuration list for PBXNativeTarget "CodeFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F352C4E1F345279009990D0 /* Debug */,
+				1F352C4F1F345279009990D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
