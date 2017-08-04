@@ -6,6 +6,11 @@
 //  Copyright © 2017年 VIctorChee. All rights reserved.
 //
 
+/*
+ http://www.jianshu.com/p/e5755244ce30
+ https://segmentfault.com/a/1190000007981847
+ 
+ */
 import Cocoa
 
 @NSApplicationMain

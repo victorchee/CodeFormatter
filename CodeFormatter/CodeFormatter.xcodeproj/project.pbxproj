@@ -15,6 +15,7 @@
 		1F352C461F345279009990D0 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F352C451F345279009990D0 /* SourceEditorExtension.swift */; };
 		1F352C481F345279009990D0 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F352C471F345279009990D0 /* SourceEditorCommand.swift */; };
 		1F352C4C1F345279009990D0 /* CodeFormat.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1F352C3E1F345279009990D0 /* CodeFormat.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1F352C521F345E1E009990D0 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F352C511F345E1E009990D0 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		1F352C451F345279009990D0 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		1F352C471F345279009990D0 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		1F352C491F345279009990D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F352C511F345E1E009990D0 /* Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				1F352C451F345279009990D0 /* SourceEditorExtension.swift */,
 				1F352C471F345279009990D0 /* SourceEditorCommand.swift */,
+				1F352C511F345E1E009990D0 /* Formatter.swift */,
 				1F352C491F345279009990D0 /* Info.plist */,
 				1F352C431F345279009990D0 /* Supporting Files */,
 			);
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F352C521F345E1E009990D0 /* Formatter.swift in Sources */,
 				1F352C461F345279009990D0 /* SourceEditorExtension.swift in Sources */,
 				1F352C481F345279009990D0 /* SourceEditorCommand.swift in Sources */,
 			);
