@@ -2,7 +2,7 @@
 //  Formatter.swift
 //  CodeFormatter
 //
-//  Created by Migu on 2017/8/4.
+//  Created by Victor Chee on 2017/8/6.
 //  Copyright © 2017年 VIctorChee. All rights reserved.
 //
 

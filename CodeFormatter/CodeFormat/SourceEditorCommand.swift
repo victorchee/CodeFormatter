@@ -2,8 +2,8 @@
 //  SourceEditorCommand.swift
 //  CodeFormat
 //
-//  Created by Migu on 2017/8/4.
-//  Copyright © 2017年 VIctorChee. All rights reserved.
+//  Created by Victor Chee on 2017/8/6.
+//  Copyright © 2017年 VictorChee. All rights reserved.
 //
 
 import Foundation
@@ -14,6 +14,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
         
+        print("Source Editor Command")
         format(invocation)
         
         completionHandler(nil)
@@ -27,4 +28,5 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         let formatter = Formatter(invocation)
         formatter.checkBeforeFirstImportHasOnlyOneEmptyLine()
     }
+    
 }

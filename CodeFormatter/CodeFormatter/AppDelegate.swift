@@ -2,15 +2,14 @@
 //  AppDelegate.swift
 //  CodeFormatter
 //
-//  Created by Migu on 2017/8/4.
-//  Copyright © 2017年 VIctorChee. All rights reserved.
+//  Created by Victor Chee on 2017/8/6.
+//  Copyright © 2017年 VictorChee. All rights reserved.
 //
 
-/*
- http://www.jianshu.com/p/e5755244ce30
- https://segmentfault.com/a/1190000007981847
- 
- */
+// https://code.tutsplus.com/tutorials/how-to-create-an-xcode-source-editor-extension--cms-26772
+// https://segmentfault.com/a/1190000007981847
+// http://www.jianshu.com/p/e5755244ce30
+
 import Cocoa
 
 @NSApplicationMain
