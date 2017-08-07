@@ -27,6 +27,8 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let formatter = Formatter(invocation)
         formatter.checkBeforeFirstImportHasOnlyOneEmptyLine()
+        formatter.checkAfterLastImportHasOnlyOneEmptyLine()
+        formatter.checkBeforeInterfaceHasOnlyOneEmptyLine()
     }
     
 }

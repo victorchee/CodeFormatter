@@ -4,19 +4,15 @@
 //
 //  Created by Migu on 2017/8/4.
 //  Copyright © 2017年 VIctorChee. All rights reserved.
-//
 
-
-
-
+@import UIKit;
 #import "AppDelegate.h"
 
+
+
 @interface AppDelegate ()
-
 @end
-
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -50,5 +46,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+@end
+
+
+
+
+@interface Test : NSObject
+@end
+
+
+
+@implementation Test
 
 @end
