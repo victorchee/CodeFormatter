@@ -29,6 +29,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         formatter.checkBeforeFirstImportHasOnlyOneEmptyLine()
         formatter.checkAfterLastImportHasOnlyOneEmptyLine()
         formatter.checkBeforeInterfaceHasOnlyOneEmptyLine()
+        formatter.checkAfterEndHasOnlyOneEmptyLine()
     }
     
 }

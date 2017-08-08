@@ -8,10 +8,9 @@
 @import UIKit;
 #import "AppDelegate.h"
 
-
-
 @interface AppDelegate ()
 @end
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -49,14 +48,9 @@
 
 @end
 
-
-
-
 @interface Test : NSObject
 @end
 
-
-
 @implementation Test
-
 @end
+
