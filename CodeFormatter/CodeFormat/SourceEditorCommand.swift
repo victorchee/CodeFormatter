@@ -15,7 +15,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
         
         print("Source Editor Command")
-        print(invocation.buffer.contentUTI)
+        guard invocation.buffer.contentUTI == "public.objective-c-source" else { return }
         format(invocation)
         
         completionHandler(nil)
