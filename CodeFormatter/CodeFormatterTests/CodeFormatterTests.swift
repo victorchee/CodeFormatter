@@ -48,9 +48,8 @@ class CodeFormatterTests: XCTestCase {
         XCTAssertEqual(lines, output)
     }
     
+    // MARK: - checkBeforeFirstImportHasOnlyOneEmptyLine
     func testCheckBeforeFirstImportHasOnlyOneEmptyLineFromOnlyEmptyLines() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let inputs = [
             ["@import UIKit", "\n"],
             ["\n", "@import UIKit", "\n"],
@@ -65,24 +64,18 @@ class CodeFormatterTests: XCTestCase {
     }
     
     func testCheckBeforeFirstImportHasOnlyOneEmptyLineFromNoImportLines() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let input = ["\n", "\n", "\n", "@interface UIKit", "\n"]
         let output = ["\n", "\n", "\n", "@interface UIKit", "\n"]
         assert(input: input, checker: Checker().checkBeforeFirstImportHasOnlyOneEmptyLine(_:), output: output)
     }
     
     func testCheckBeforeFirstImportHasOnlyOneEmptyLineFromMulipuleImportLines() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         let input = ["\n", "\n", "\n", "@import UIKit", "\n", "\n", "@import UIKit",]
         let output = ["\n", "@import UIKit", "\n", "\n", "@import UIKit",]
         assert(input: input, checker: Checker().checkBeforeFirstImportHasOnlyOneEmptyLine(_:), output: output)
     }
     
-    func testCheckBeforeFirstImportHasOnlyOneEmptyLinePerformance() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCheckBeforeFirstImportHasOnlyOneEmptyLineFromNormalLines() {
         let input = ["//\n",
                      "//  AppDelegate.m\n",
                      "//  FormatTestProject\n",
@@ -132,4 +125,236 @@ class CodeFormatterTests: XCTestCase {
         assert(input: input, checker: Checker().checkBeforeFirstImportHasOnlyOneEmptyLine(_:), output: output)
     }
     
+    // MARK: - checkAfterLastImportHasOnlyOneEmptyLine
+    func testCheckAfterLastImportHasOnlyOneEmptyLineFromEmptyLines() {
+        let inputs = [
+            ["\n", "#import UIKit"],
+            ["\n", "#import UIKit", "\n"],
+            ["\n", "#import UIKit", "\n", "\n"],
+            ["\n", "#import UIKit", "\n", "\n", "\n"],
+            ["\n", "#import UIKit", "\n", "\n", "\n", "\n"],
+            ]
+        let output = ["\n", "#impot UIKit", "\n"]
+        for input in inputs {
+            assert(input: input, checker: Checker().checkAfterLastImportHasOnlyOneEmptyLine(_:), output: output)
+        }
+    }
+    
+    func testCheckAfterLastImportHasOnlyOneEmptyLineFromNoImportLines() {
+        let input = ["\n", "@interface UIKit", "\n", "\n", "\n"]
+        let output = ["\n", "@interface UIKit", "\n", "\n", "\n"]
+        assert(input: input, checker: Checker().checkAfterLastImportHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    func testCheckAfterLastImportHasOnlyOneEmptyLineFromMulipuleImportLines() {
+        let input = ["\n", "\n", "@import UIKit", "\n", "\n", "\n", "@import UIKit", "\n", "\n", "\n"]
+        let output = ["\n", "\n", "@import UIKit", "\n", "@import UIKit", "\n"]
+        assert(input: input, checker: Checker().checkAfterLastImportHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    func testCheckAfterLastImportHasOnlyOneEmptyLineFromNormalLines() {
+        let input = ["//\n",
+                     "//  AppDelegate.m\n",
+                     "//  FormatTestProject\n",
+                     "//\n",
+                     "//  Created by Migu on 2017/8/4.\n",
+                     "//  Copyright © 2017年 VIctorChee. All rights reserved.\n",
+                     "\n",
+                     "\n",
+                     "@import UIKit;\n",
+                     "#import \"AppDelegate.h\"\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     "@interface AppDelegate ()\n",
+                     "@end\n",
+                     "\n",
+                     "@implementation AppDelegate\n",
+                     "\n",
+                     "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n",
+                     "// Override point for customization after application launch.\n",
+                     "return YES;\n",
+                     "}]\n",
+                     "@end\n",
+                     ]
+        let output = ["//\n",
+                      "//  AppDelegate.m\n",
+                      "//  FormatTestProject\n",
+                      "//\n",
+                      "//  Created by Migu on 2017/8/4.\n",
+                      "//  Copyright © 2017年 VIctorChee. All rights reserved.\n",
+                      "\n",
+                      "\n",
+                      "@import UIKit;\n",
+                      "#import \"AppDelegate.h\"\n",
+                      "\n",
+                      "@interface AppDelegate ()\n",
+                      "@end\n",
+                      "\n",
+                      "@implementation AppDelegate\n",
+                      "\n",
+                      "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n",
+                      "// Override point for customization after application launch.\n",
+                      "return YES;\n",
+                      "}]\n",
+                      "@end\n",
+                      ]
+        assert(input: input, checker: Checker().checkAfterLastImportHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    // MARK: - checkBeforeInterfaceHasOnlyOneEmptyLine
+    func testCheckBeforeInterfaceHasOnlyOneEmptyLineFromOnlyEmptyLines() {
+        let inputs = [
+            ["@interface UIKit", "\n"],
+            ["\n", "@interface UIKit", "\n"],
+            ["\n", "\n", "@interface UIKit", "\n"],
+            ["\n", "\n", "\n", "@interface UIKit", "\n"],
+            ["\n", "\n", "\n", "\n", "@interface UIKit", "\n"],
+            ]
+        let output = ["\n", "@interface UIKit", "\n"]
+        for input in inputs {
+            assert(input: input, checker: Checker().checkBeforeInterfaceHasOnlyOneEmptyLine(_:), output: output)
+        }
+    }
+    
+    func testCheckBeforeInterfaceHasOnlyOneEmptyLineFromNoInterfaceLines() {
+        let input = ["\n", "\n", "\n", "@import UIKit", "\n"]
+        let output = ["\n", "\n", "\n", "@import UIKit", "\n"]
+        assert(input: input, checker: Checker().checkBeforeInterfaceHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    func testCheckBeforeInterfaceHasOnlyOneEmptyLineFromMulipuleImportLines() {
+        let input = ["\n", "\n", "\n", "@interface UIKit", "\n", "\n", "@interface UIKit",]
+        let output = ["\n", "@interface UIKit", "\n", "\n", "@interface UIKit",]
+        assert(input: input, checker: Checker().checkBeforeInterfaceHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    func testCheckBeforeInterfaceHasOnlyOneEmptyLineFromNormalLines() {
+        let input = ["//\n",
+                     "//  AppDelegate.m\n",
+                     "//  FormatTestProject\n",
+                     "//\n",
+                     "//  Created by Migu on 2017/8/4.\n",
+                     "//  Copyright © 2017年 VIctorChee. All rights reserved.\n",
+                     "\n",
+                     "@import UIKit;\n",
+                     "#import \"AppDelegate.h\"\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     "@interface AppDelegate ()\n",
+                     "@end\n",
+                     "\n",
+                     "@implementation AppDelegate\n",
+                     "\n",
+                     "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n",
+                     "// Override point for customization after application launch.\n",
+                     "return YES;\n",
+                     "}]\n",
+                     "@end\n",
+                     ]
+        let output = ["//\n",
+                      "//  AppDelegate.m\n",
+                      "//  FormatTestProject\n",
+                      "//\n",
+                      "//  Created by Migu on 2017/8/4.\n",
+                      "//  Copyright © 2017年 VIctorChee. All rights reserved.\n",
+                      "\n",
+                      "@import UIKit;\n",
+                      "#import \"AppDelegate.h\"\n",
+                      "\n",
+                      "@interface AppDelegate ()\n",
+                      "@end\n",
+                      "\n",
+                      "@implementation AppDelegate\n",
+                      "\n",
+                      "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n",
+                      "// Override point for customization after application launch.\n",
+                      "return YES;\n",
+                      "}]\n",
+                      "@end\n",
+                      ]
+        assert(input: input, checker: Checker().checkBeforeInterfaceHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    // MARK: - checkAfterEndHasOnlyOneEmptyLine
+    func testCheckAfterEndHasOnlyOneEmptyLineFromOnlyEmptyLines() {
+        let inputs = [
+            ["\n", "@end"],
+            ["\n", "@end", "\n"],
+            ["\n", "@end", "\n", "\n"],
+            ["\n", "@end", "\n", "\n", "\n"],
+            ["\n", "@end", "\n", "\n", "\n", "\n"],
+            ]
+        let output = ["\n", "@end", "\n"]
+        for input in inputs {
+            assert(input: input, checker: Checker().checkAfterEndHasOnlyOneEmptyLine(_:), output: output)
+        }
+    }
+    
+    func testCheckAfterEndHasOnlyOneEmptyLineFromNoEndLines() {
+        let input = ["\n", "@import UIKit", "\n", "\n", "\n"]
+        let output = ["\n", "@import UIKit", "\n", "\n", "\n"]
+        assert(input: input, checker: Checker().checkAfterEndHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    func testCheckAfterEndHasOnlyOneEmptyLineFromMulipuleImportLines() {
+        let input = ["\n", "@end", "\n", "\n", "@end", "\n", "\n", "\n"]
+        let output = ["\n", "@end", "\n", "\n", "@end", "\n"]
+        assert(input: input, checker: Checker().checkAfterEndHasOnlyOneEmptyLine(_:), output: output)
+    }
+    
+    func testCheckAfterEndHasOnlyOneEmptyLineFromNormalLines() {
+        let input = ["//\n",
+                     "//  AppDelegate.m\n",
+                     "//  FormatTestProject\n",
+                     "//\n",
+                     "//  Created by Migu on 2017/8/4.\n",
+                     "//  Copyright © 2017年 VIctorChee. All rights reserved.\n",
+                     "\n",
+                     "@import UIKit;\n",
+                     "#import \"AppDelegate.h\"\n",
+                     "\n",
+                     "@interface AppDelegate ()\n",
+                     "@end\n",
+                     "\n",
+                     "@implementation AppDelegate\n",
+                     "\n",
+                     "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n",
+                     "// Override point for customization after application launch.\n",
+                     "return YES;\n",
+                     "}]\n",
+                     "@end\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     "\n",
+                     ]
+        let output = ["//\n",
+                      "//  AppDelegate.m\n",
+                      "//  FormatTestProject\n",
+                      "//\n",
+                      "//  Created by Migu on 2017/8/4.\n",
+                      "//  Copyright © 2017年 VIctorChee. All rights reserved.\n",
+                      "\n",
+                      "@import UIKit;\n",
+                      "#import \"AppDelegate.h\"\n",
+                      "\n",
+                      "@interface AppDelegate ()\n",
+                      "@end\n",
+                      "\n",
+                      "@implementation AppDelegate\n",
+                      "\n",
+                      "- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {\n",
+                      "// Override point for customization after application launch.\n",
+                      "return YES;\n",
+                      "}]\n",
+                      "@end\n",
+                      "\n",
+                      ]
+        assert(input: input, checker: Checker().checkAfterEndHasOnlyOneEmptyLine(_:), output: output)
+    }
 }

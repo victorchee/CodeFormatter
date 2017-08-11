@@ -104,8 +104,6 @@ class Checker {
     /// 检测@Interface之前仅保留一个空行
     func checkBeforeInterfaceHasOnlyOneEmptyLine(_ lines: [String]) -> [Result] {
         var results = [Result]()
-        var deleteRanges = [Range<Int>]()
-        var insertIndexes = [Int]()
         for index in 0 ..< lines.count {
             let line = lines[index]
             if line.hasPrefix("@interface") { // @interface行
@@ -148,8 +146,6 @@ class Checker {
     /// 检测@end之后仅保留一个空行（Xcode的最后一行空行，实际在lines里面并没有，导致最后一个@end之后有两个空行）
     func checkAfterEndHasOnlyOneEmptyLine(_ lines: [String]) -> [Result] {
         var results = [Result]()
-        var deleteRanges = [Range<Int>]()
-        var insertIndexes = [Int]()
         for index in 0 ..< lines.count {
             let line = lines[index]
             if line == "@end\n" { // @end行
