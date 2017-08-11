@@ -15,6 +15,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
         
         print("Source Editor Command")
+        print(invocation.buffer.contentUTI)
         format(invocation)
         
         completionHandler(nil)
@@ -26,10 +27,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         }
         
         let formatter = Formatter(invocation)
-        formatter.checkBeforeFirstImportHasOnlyOneEmptyLine()
-        formatter.checkAfterLastImportHasOnlyOneEmptyLine()
-        formatter.checkBeforeInterfaceHasOnlyOneEmptyLine()
-        formatter.checkAfterEndHasOnlyOneEmptyLine()
+        formatter.format()
     }
     
 }

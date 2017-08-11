@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F6C094D1F39E29000A0476A /* CodeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C094C1F39E29000A0476A /* CodeFormatterTests.swift */; };
+		1F6C09551F3C2E6900A0476A /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C09541F3C2E6900A0476A /* Checker.swift */; };
+		1F6C09561F3C326100A0476A /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6C09541F3C2E6900A0476A /* Checker.swift */; };
 		F03157201F36A4A100409259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F031571F1F36A4A100409259 /* AppDelegate.swift */; };
 		F03157221F36A4A100409259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03157211F36A4A100409259 /* ViewController.swift */; };
 		F03157241F36A4A100409259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03157231F36A4A100409259 /* Assets.xcassets */; };
@@ -54,6 +56,7 @@
 		1F6C094A1F39E29000A0476A /* CodeFormatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeFormatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6C094C1F39E29000A0476A /* CodeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFormatterTests.swift; sourceTree = "<group>"; };
 		1F6C094E1F39E29000A0476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F6C09541F3C2E6900A0476A /* Checker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
 		F031571C1F36A4A100409259 /* CodeFormatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeFormatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F031571F1F36A4A100409259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F03157211F36A4A100409259 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 				F03157391F36A4D800409259 /* SourceEditorExtension.swift */,
 				F031573B1F36A4D800409259 /* SourceEditorCommand.swift */,
 				F03157451F36A58F00409259 /* Formatter.swift */,
+				1F6C09541F3C2E6900A0476A /* Checker.swift */,
 				F031573D1F36A4D800409259 /* Info.plist */,
 				F03157371F36A4D800409259 /* Supporting Files */,
 			);
@@ -302,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6C094D1F39E29000A0476A /* CodeFormatterTests.swift in Sources */,
+				1F6C09561F3C326100A0476A /* Checker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F03157461F36A58F00409259 /* Formatter.swift in Sources */,
+				1F6C09551F3C2E6900A0476A /* Checker.swift in Sources */,
 				F031573A1F36A4D800409259 /* SourceEditorExtension.swift in Sources */,
 				F031573C1F36A4D800409259 /* SourceEditorCommand.swift in Sources */,
 			);
@@ -355,12 +361,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = YA5C67G66D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodeFormatterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.victorchee.CodeFormatterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeFormatter.app/Contents/MacOS/CodeFormatter";
 			};
@@ -370,12 +378,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = YA5C67G66D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CodeFormatterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.victorchee.CodeFormatterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeFormatter.app/Contents/MacOS/CodeFormatter";
 			};
@@ -553,6 +563,7 @@
 				1F6C09521F39E29000A0476A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F03157171F36A4A000409259 /* Build configuration list for PBXProject "CodeFormatter" */ = {
 			isa = XCConfigurationList;
